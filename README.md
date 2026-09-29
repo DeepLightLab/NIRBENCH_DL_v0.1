@@ -1,8 +1,7 @@
 # NIRBENCH-DL v0.1
 
-We introduce NIRBENCH-DL (v0.1) a benchmark to test performance of DL models in chemometric regression tasks based on NIR (Near-infrared) spectra. The current version evaluates the "out-of-the-box" performance(i.e. no hyperparameter optimization) of **13 deep learning architectures** specifically designed for NIR data analysis against two baselines: the tablular foundation model **TabPFN-3.5**, and a optimized (preprocessing and LVs) **partial least squares (PLS)** reference on **30 fixed train/test tasks**. *The main purspose of the benchmark is to assess how well different DL architectures generalize do multiple chemometric prediction tasks based on spectral data*.
+We introduce NIRBENCH-DL (v0.1) a benchmark to test performance of DL models in chemometric regression tasks based on NIR (Near-infrared) spectra. The current version evaluates the "out-of-the-box" performance (i.e. no hyperparameter optimization) of **13 deep learning architectures** specifically designed for NIR data analysis against two baselines: the tablular foundation model **TabPFN-3.5**, and an optimized (preprocessing and LVs) **partial least squares (PLS)** reference on **30 fixed train/test tasks**. *The main purspose of the benchmark is to assess how well different DL architectures generalize do multiple chemometric prediction tasks based on spectral data*. This can be used by researchers developing new DL architectures for NIR or by chemometricians that want to apply the available models to their data. For this purpose we are sharing the implemented DL test here.
 
-This clean release contains the executable benchmark, model definitions, shared data loader, fixed dataset partitions, environment files, and provenance documentation. Generated results, old script revisions, notebooks, papers, logs, and rendered model files are intentionally excluded.
 
 ## Repository contents
 
@@ -124,11 +123,11 @@ Model keys are:
 spectraformer, spectratr, spectranet32, spectranet53
 ```
 
-### Test your models
+### Test your own models
 
-To evaluate a new Keras architecture without editing `benchmark.py`, copy its Python file into `models/newmodel/`. Its builder must accept the number of spectral features as the first positional argument and return an uncompiled Keras model with input shape `(spectral_features, 1)` and one continuous output.
+You can implement your own DL architecture (inn Keras) and evaluate it on this benchmark without editing `benchmark.py`. Just copy your Python file into `models/newmodel/`. You can take a look at the implemented models and follow its structure. Its builder must accept the number of spectral features as the first positional argument and return an uncompiled Keras model with input shape `(spectral_features, 1)` and one continuous output.
 
-The simplest model file defines `build_model`:
+An example (simplest model file defines `build_model`):
 
 ```python
 # models/newmodel/MyModel.py

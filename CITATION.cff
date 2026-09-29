@@ -1,0 +1,18 @@
+cff-version: 1.2.0
+message: "If you use NIRBENCH-DL, please cite this repository and the original datasets and model papers listed in the documentation."
+title: "NIRBENCH-DL v0.1"
+type: software
+authors:
+  - family-names: Passos
+    given-names: Dário
+version: 0.1.0
+date-released: 2026-09-29
+license: MIT
+repository-code: "https://github.com/dario-passos/NIRBENCH_DL_v0.1"
+url: "https://github.com/dario-passos/NIRBENCH_DL_v0.1"
+keywords:
+  - near-infrared spectroscopy
+  - deep learning
+  - regression
+  - TabPFN
+  - chemometrics

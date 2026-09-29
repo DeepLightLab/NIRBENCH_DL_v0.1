@@ -1,0 +1,27 @@
+# Environments and caches
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ipynb_checkpoints/
+
+# Benchmark outputs
+results/
+pls_baseline_benchmark.cvs
+pls_preprocessing_search.csv
+*.log
+slurm-*.out
+
+# Model checkpoints and credentials
+*.safetensors
+*.ckpt
+*.pt
+*.pth
+.env
+
+# Editors and operating systems
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

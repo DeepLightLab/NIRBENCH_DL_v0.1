@@ -113,7 +113,12 @@ def main() -> None:
     if extra_models:
         errors.append(f"unexpected model files: {sorted(extra_models)}")
 
-    for entry_point in ("benchmark.py", "benchmark_tabpfn.py", "pls_baseline.py"):
+    for entry_point in (
+        "benchmark.py",
+        "benchmark_newmodel.py",
+        "benchmark_tabpfn.py",
+        "pls_baseline.py",
+    ):
         if not (ROOT / entry_point).is_file():
             errors.append(f"missing entry point: {entry_point}")
 

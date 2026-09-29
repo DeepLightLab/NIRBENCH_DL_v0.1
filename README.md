@@ -1,6 +1,6 @@
 # NIRBENCH-DL v0.1
 
-A reproducible benchmark for regression from near-infrared and visible-near-infrared spectra. It evaluates **13 deep learning architectures**, **TabPFN-3.5**, and a jointly optimized **partial least squares (PLS)** reference on **30 fixed train/test tasks**.
+We introduce NIRBENCH-DL (v0.1) a benchmark to test performance of DL models in chemometric regression tasks based on NIR (Near-infrared) spectra. The current version evaluates the "out-of-the-box" performance(i.e. no hyperparameter optimization) of **13 deep learning architectures** specifically designed for NIR data analysis against two baselines: the tablular foundation model **TabPFN-3.5**, and a optimized (preprocessing and LVs) **partial least squares (PLS)** reference on **30 fixed train/test tasks**. *The main purspose of the benchmark is to assess how well different DL architectures generalize do multiple chemometric prediction tasks based on spectral data*.
 
 This clean release contains the executable benchmark, model definitions, shared data loader, fixed dataset partitions, environment files, and provenance documentation. Generated results, old script revisions, notebooks, papers, logs, and rendered model files are intentionally excluded.
 
@@ -10,9 +10,11 @@ This clean release contains the executable benchmark, model definitions, shared 
 .
 ├── benchmark.py             # 13 TensorFlow/Keras models
 ├── benchmark_tabpfn.py      # TabPFN-3.5 regressor
+├── benchmark_newmodel.py    # drop-in evaluator for a new Keras model
 ├── pls_baseline.py          # preprocessing-aware PLS baseline
 ├── validate_setup.py        # dataset and source-tree validation
-├── models/                  # model definitions
+├── models/                  # built-in model definitions
+├── models/newmodel/         # drop-in folder for a new model
 ├── src/data_loading.py      # shared fixed-split loader
 ├── datasets/                # 30 train/test task folders
 ├── DATASETS.md              # provenance, task mapping, and data terms
@@ -121,6 +123,50 @@ Model keys are:
 1dinceptionresnet, markspectra, residualspectra, scnet,
 spectraformer, spectratr, spectranet32, spectranet53
 ```
+
+### Test your models
+
+To evaluate a new Keras architecture without editing `benchmark.py`, copy its Python file into `models/newmodel/`. Its builder must accept the number of spectral features as the first positional argument and return an uncompiled Keras model with input shape `(spectral_features, 1)` and one continuous output.
+
+The simplest model file defines `build_model`:
+
+```python
+# models/newmodel/MyModel.py
+from tensorflow import keras
+from tensorflow.keras import layers
+
+def build_model(input_vector_dimension):
+    inputs = keras.Input(shape=(input_vector_dimension, 1))
+    x = layers.Conv1D(16, 9, activation="relu")(inputs)
+    x = layers.GlobalAveragePooling1D()(x)
+    outputs = layers.Dense(1)(x)
+    return keras.Model(inputs, outputs)
+```
+
+If it is the only Python file in `models/newmodel/`, run it on all datasets with:
+
+```bash
+python benchmark_newmodel.py
+```
+
+Use `--model-file` when the folder contains several models, `--builder` when the factory has another name, and `--name` to control the results folder and leaderboard label:
+
+```bash
+python benchmark_newmodel.py \
+  --model-file MyModel.py \
+  --builder build_my_model \
+  --name MyModel
+```
+
+A quick single-dataset run is available through the same filter:
+
+```bash
+python benchmark_newmodel.py \
+  --model-file MyModel.py \
+  --dataset 1-Wheat_kernels_protein
+```
+
+The launcher applies the standard external-model protocol centrally: feature and target standardization, Adam at `1e-3`, MSE loss, five-fold epoch selection, ten seeded full-training fits, test scoring, and compatible outputs under `results/<name>/`. List the available drop-in files with `python benchmark_newmodel.py --list`.
 
 To resume and skip datasets that already have complete outputs:
 

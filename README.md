@@ -4,12 +4,6 @@ A reproducible benchmark for regression from near-infrared and visible-near-infr
 
 This clean release contains the executable benchmark, model definitions, shared data loader, fixed dataset partitions, environment files, and provenance documentation. Generated results, old script revisions, notebooks, papers, logs, and rendered model files are intentionally excluded.
 
-## TabPFN-3.5 Hackathon submission
-
-NIRBENCH-DL uses the TabPFN-3.5 regressor as a pretrained foundation-model baseline for high-dimensional spectral regression. It fits TabPFN on each complete training partition and evaluates the stored test partition over ten deterministic seeds. The project is submitted as a **benchmark harness / domain application** for the [Prior Labs TabPFN-3.5 Hackathon](https://platform.priorlabs.ai/hackathon-3.5). The hackathon terms require a public source-code repository released under Apache License 2.0.
-
-**Pre-existing work disclosure:** the NIR benchmark, fixed dataset splits, PLS pipeline, and deep learning architecture adaptations existed before the hackathon. The TabPFN-3.5 integration, its repeated evaluation protocol, and the direct comparison with the spectroscopy models form the hackathon extension.
-
 ## Repository contents
 
 ```text

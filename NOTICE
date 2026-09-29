@@ -1,0 +1,7 @@
+NIRBENCH-DL
+Copyright 2026 Dário Passos
+
+This product includes benchmark implementations adapted from published model
+architectures. The originating publications are listed in MODEL_REFERENCES.md.
+Scientific datasets and TabPFN model weights are separately licensed and are
+not covered by the Apache License 2.0 for this software.

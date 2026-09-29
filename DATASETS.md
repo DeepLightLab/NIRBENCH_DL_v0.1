@@ -65,4 +65,4 @@ Each task directory contains `data_train.csv` and `data_test.csv`. Spectral colu
 
 `datasets/manifest.csv` records the row count, loaded spectral width, target name, byte size, and SHA-256 digest of every stored partition. Run `python validate_setup.py` after cloning to verify the copy.
 
-The repository's MIT license applies to software and does not override dataset terms. Cite the original source for every dataset you use. Records marked “available from the author” originated at CEOT-UAlg; contact the repository author for provenance or reuse questions. Other files remain subject to the licenses and attribution requirements published by their source repositories.
+The repository's Apache License 2.0 applies to software and does not override dataset terms. Cite the original source for every dataset you use. Records marked “available from the author” originated at CEOT-UAlg; contact the repository author for provenance or reuse questions. Other files remain subject to the licenses and attribution requirements published by their source repositories.

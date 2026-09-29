@@ -6,7 +6,7 @@ This clean release contains the executable benchmark, model definitions, shared 
 
 ## TabPFN-3.5 Hackathon submission
 
-NIRBENCH-DL uses the TabPFN-3.5 regressor as a pretrained foundation-model baseline for high-dimensional spectral regression. It fits TabPFN on each complete training partition and evaluates the stored test partition over ten deterministic seeds. The project is submitted as a **benchmark harness / domain application** for the [Prior Labs TabPFN-3.5 Hackathon](https://platform.priorlabs.ai/hackathon-3.5).
+NIRBENCH-DL uses the TabPFN-3.5 regressor as a pretrained foundation-model baseline for high-dimensional spectral regression. It fits TabPFN on each complete training partition and evaluates the stored test partition over ten deterministic seeds. The project is submitted as a **benchmark harness / domain application** for the [Prior Labs TabPFN-3.5 Hackathon](https://platform.priorlabs.ai/hackathon-3.5). The hackathon terms require a public source-code repository released under Apache License 2.0.
 
 **Pre-existing work disclosure:** the NIR benchmark, fixed dataset splits, PLS pipeline, and deep learning architecture adaptations existed before the hackathon. The TabPFN-3.5 integration, its repeated evaluation protocol, and the direct comparison with the spectroscopy models form the hackathon extension.
 
@@ -92,7 +92,7 @@ python benchmark_tabpfn.py \
   --device cuda
 ```
 
-See the [official TabPFN installation instructions](https://github.com/PriorLabs/TabPFN#installation--setup) and the [TabPFN-3.5 model license](https://huggingface.co/Prior-Labs/tabpfn_3_5/blob/main/LICENSE). The weights permit research and limited internal evaluation and are not covered by this repository's MIT license.
+See the [official TabPFN installation instructions](https://github.com/PriorLabs/TabPFN#installation--setup) and the [TabPFN-3.5 model license](https://huggingface.co/Prior-Labs/tabpfn_3_5/blob/main/LICENSE). The weights permit research and limited internal evaluation and are not covered by this repository's Apache License 2.0.
 
 ## Validate the clean checkout
 
@@ -188,7 +188,7 @@ These values describe the v0.1 saved experiment and can be regenerated from the 
 
 ## Data, code, and model licenses
 
-The MIT license covers the benchmark software authored for this repository. It does not relicense the included scientific datasets, TabPFN weights, or third-party packages. Dataset attribution and source links are in [DATASETS.md](DATASETS.md); architecture references are in [MODEL_REFERENCES.md](MODEL_REFERENCES.md). Users remain responsible for the terms attached to each original dataset and to the TabPFN-3.5 checkpoint.
+The Apache License 2.0 covers the benchmark software authored for this repository. It does not relicense the included scientific datasets, TabPFN weights, or third-party packages. Dataset attribution and source links are in [DATASETS.md](DATASETS.md); architecture references are in [MODEL_REFERENCES.md](MODEL_REFERENCES.md). Users remain responsible for the terms attached to each original dataset and to the TabPFN-3.5 checkpoint.
 
 ## Citation
 

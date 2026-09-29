@@ -1,6 +1,6 @@
 # NIRBENCH-DL v0.1
 
-NIRBENCH-DL v0.1 benchmarks deep learning models on chemometric regression tasks based on near-infrared (NIR) spectra. It evaluates the out-of-the-box performance, without hyperparameter optimization, of **13 deep learning architectures** designed for NIR analysis against two baselines: the tabular foundation model **TabPFN-3.5** and an optimized **partial least squares (PLS)** reference with jointly selected preprocessing and latent variables. All methods use the same **30 fixed train/test tasks**. The benchmark is intended to show how consistently different architectures generalize across multiple spectral prediction tasks and to help researchers evaluate existing or newly developed models.
+[NIRBENCH-DL v0.1](https://deeplightlab.github.io/nirbench01/index.html) benchmarks deep learning models on chemometric regression tasks based on near-infrared (NIR) spectra. It evaluates the out-of-the-box performance, without hyperparameter optimization, of **13 deep learning architectures** designed for NIR analysis against two baselines: the tabular foundation model **TabPFN-3.5** and an optimized **partial least squares (PLS)** reference with jointly selected preprocessing and latent variables. All methods use the same **30 fixed train/test tasks**. The benchmark is intended to show how consistently different architectures generalize across multiple spectral prediction tasks and to help researchers evaluate existing or newly developed models.
 
 
 ## Repository contents
@@ -90,6 +90,8 @@ python benchmark_tabpfn.py \
 See the [official TabPFN installation instructions](https://github.com/PriorLabs/TabPFN#installation--setup) and the [TabPFN-3.5 model license](https://huggingface.co/Prior-Labs/tabpfn_3_5/blob/main/LICENSE). The weights permit research and limited internal evaluation and are not covered by this repository's Apache License 2.0.
 
 ## Validate the clean checkout
+
+First recreate the six source-download datasets by following the Python commands in the footnote in [DATASETS.md](DATASETS.md). Then run:
 
 ```bash
 python validate_setup.py
@@ -230,7 +232,7 @@ The current results show that TabPFN-3.5, a foundation model for tabular data, a
 
 ## Data, code, and model licenses
 
-The Apache License 2.0 covers the benchmark software authored for this repository. It does not relicense the included scientific datasets, TabPFN weights, or third-party packages. Dataset attribution and source links are in [DATASETS.md](DATASETS.md); architecture references are in [MODEL_REFERENCES.md](MODEL_REFERENCES.md). Users remain responsible for the terms attached to each original dataset and to the TabPFN-3.5 checkpoint.
+The Apache License 2.0 covers the benchmark software authored for this repository. It does not relicense the included scientific datasets, TabPFN weights, or third-party packages. Dataset provenance and task mappings are in [DATASETS.md](DATASETS.md), and dataset licenses, permissions, redistribution status, and modifications are in [DATA_LICENSES.md](DATA_LICENSES.md). Architecture references are in [MODEL_REFERENCES.md](MODEL_REFERENCES.md). Users remain responsible for the terms attached to each original dataset and to the TabPFN-3.5 checkpoint.
 
 ## Citation
 

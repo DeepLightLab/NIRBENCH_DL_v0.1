@@ -8,8 +8,8 @@ authors:
 version: 0.1.0
 date-released: 2026-09-29
 license: Apache-2.0
-repository-code: "https://github.com/dario-passos/NIRBENCH_DL_v0.1"
-url: "https://github.com/dario-passos/NIRBENCH_DL_v0.1"
+repository-code: "https://github.com/DeepLightLab/NIRBENCH_DL_v0.1"
+url: "https://github.com/DeepLightLab/NIRBENCH_DL_v0.1"
 keywords:
   - near-infrared spectroscopy
   - deep learning

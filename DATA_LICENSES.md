@@ -6,7 +6,9 @@ The Apache License 2.0 in this repository covers the NIRBENCH-DL software author
 
 This document records the source, license or permission basis, attribution, repository handling, and benchmark transformations for the 30 tasks. It does not replace the original license or permission notice. When this document and an upstream source disagree, the upstream terms control.
 
-`Source download required` means that NIRBENCH-DL does not claim a right to redistribute the source data. Users must obtain the data from the linked provider and prepare the benchmark files locally. Written redistribution permission has been requested for tasks 1, 2, 4, 11, 12, and 14.
+`Source download required` means that NIRBENCH-DL does not claim a right to redistribute the source data. Users must obtain the data from the linked provider and prepare the benchmark files locally. Written redistribution permission has been requested for tasks 2, 4, 11, 12, and 14.
+
+The processed partitions for task 1 may be redistributed in NIRBENCH-DL under written permission provided by Rasmus Bro of the University of Copenhagen Chemometrics Group. The original website and associated publication must be acknowledged. No standard dataset license was specified, and the repository's Apache License 2.0 does not apply to these data.
 
 Tasks 15, 16, and 21 are CEOT–UAlg measurements released by Dário Passos, the data rights holder, under CC BY 4.0. The rights statement and attribution instructions are in `datasets/CEOT_DATA_LICENSE.md`.
 
@@ -14,7 +16,7 @@ Tasks 15, 16, and 21 are CEOT–UAlg measurements released by Dário Passos, the
 
 | Tasks | Dataset family | Original source | License or permission basis | Repository handling |
 |---|---|---|---|---|
-| 1 | Wheat kernels, protein | [University of Copenhagen Chemometrics](https://ucphchemometrics.com/datasets/); Nielsen et al. (2003), [doi:10.1094/CCHEM.2003.80.3.274](https://doi.org/10.1094/CCHEM.2003.80.3.274) | The source states that downloads are available for public use, but no explicit redistribution license was identified | **Source download required; permission pending** |
+| 1 | Wheat kernels, protein | [University of Copenhagen Chemometrics](https://ucphchemometrics.com/datasets/); Nielsen et al. (2003), [doi:10.1094/CCHEM.2003.80.3.274](https://doi.org/10.1094/CCHEM.2003.80.3.274) | Written permission from Rasmus Bro to redistribute the processed benchmark CSV files with source and publication attribution; no standard dataset license specified | Included with written permission and attribution |
 | 2 | Wheat flours, protein | D. Bertrand / INRA, [ChemProject ChemData](https://www.chemproject.org/chemdata) | No dataset-specific redistribution license was identified | **Source download required; permission pending** |
 | 3 | Tecator meat, moisture | Karin Thente / Tecator AB, [StatLib Tecator](https://lib.stat.cmu.edu/datasets/tecator) | Public domain; redistribution permitted when the complete permission note is attached | Included; see `datasets/3-Tecator_moisture/TECATOR_PERMISSION.txt` |
 | 4 | CGL mixture design, glucose | Tormod Næs and Tomas Isaksson, [Eigenvector datasets](https://eigenvector.com/resources/data-sets/) | No dataset-specific redistribution license was identified | **Source download required; permission pending** |
@@ -32,7 +34,7 @@ Tasks 15, 16, and 21 are CEOT–UAlg measurements released by Dário Passos, the
 | 22–25 | Mango harvest seasons S1–S4, dry matter | Anderson et al., [Mendeley Data](https://doi.org/10.17632/46htwnp833.5) | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) | Included with attribution; seasons separated into tasks and fixed partitions stored |
 | 30 | sensAIfood CRA-W wheat, protein | sensAIfood / CRA-W, [Zenodo](https://doi.org/10.5281/zenodo.16108496) | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) | Included with attribution; wheat/protein subset selected and fixed partitions stored |
 
-## Tasks requiring download from the original source
+## Dataset included with written redistribution permission
 
 ### Task 1 — Wheat kernels, protein
 
@@ -41,7 +43,12 @@ Tasks 15, 16, and 21 are CEOT–UAlg measurements released by Dário Passos, the
 - **Source page:** <https://ucphchemometrics.com/datasets/>
 - **Official archive:** <https://sid.erda.dk/share_redirect/dLQ6VHNshw/Wheat%20kernels%20.zip>
 - **Benchmark modifications:** the spectral matrix and protein reference were extracted from the MATLAB source; 100 spectral variables and the protein target were retained; the source `Calibration` partition was preserved as the 415-row benchmark training set and the source `Validation` partition as the 108-row benchmark test set; the result was converted to CSV and the target was placed in the final column.
-- **Redistribution status:** permission to redistribute the processed CSV copies has been requested. Until permission is granted, obtain the original archive and prepare the task locally using the instructions in `datasets/1-Wheat_kernels_protein/download_data.md`.
+- **Permission basis:** Rasmus Bro of the University of Copenhagen Chemometrics Group provided written permission after receiving a request that explicitly covered redistribution of the processed training and test CSV files through the public NIRBENCH-DL GitHub repository.
+- **Conditions recorded in the permission:** identify where the data originate by citing the University of Copenhagen dataset website and the associated publication.
+- **License status:** no standard dataset license was specified. The permission supports redistribution as part of NIRBENCH-DL and does not place the data under the repository's Apache License 2.0.
+- **Repository handling:** the processed benchmark partitions may be included with the required source and publication attribution. The original archive and the reproducible preparation script remain linked for provenance.
+
+## Tasks requiring download from the original source
 
 ### Task 2 — Wheat flours, protein
 

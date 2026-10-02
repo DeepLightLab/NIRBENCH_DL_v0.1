@@ -2,7 +2,7 @@
 
 NIRBENCH-DL contains 30 regression task configurations derived from public research datasets and CEOT-UAlg measurements. The files are harmonized copies with fixed train/test partitions. Original splits were preserved when supplied; otherwise the curated data were split and frozen so every model receives identical rows.
 
-Each task uses `data_train.csv` and `data_test.csv`. For tasks 1, 2, 4, 11, 12, and 14, these files must first be recreated from their original public sources with the supplied Python scripts.[^recreate-data] Spectral columns are identified from wavelength-like headers and the last remaining column is the target. Some source exports contain a leading serialized index or sample identifier and some do not; `src/data_loading.py` removes a leading `Unnamed` or non-wavelength identifier when present.
+Each task uses `data_train.csv` and `data_test.csv`. For tasks 2, 4, 11, 12, and 14, these files must first be recreated from their original public sources with the supplied Python scripts.[^recreate-data] Spectral columns are identified from wavelength-like headers and the last remaining column is the target. Some source exports contain a leading serialized index or sample identifier and some do not; `src/data_loading.py` removes a leading `Unnamed` or non-wavelength identifier when present.
 
 ## Sources
 
@@ -23,7 +23,7 @@ Each task uses `data_train.csv` and `data_test.csv`. For tasks 1, 2, 4, 11, 12, 
 | 17–18, 26–29 | Barley, corn, and wheat measured with Perten instruments; moisture or protein | sensAIfood / M. Lagerholm, Zenodo, [doi:10.5281/zenodo.15838136](https://doi.org/10.5281/zenodo.15838136) |
 | 19–20 | Wheat measured with Grainit/AuroraNIR; moisture or protein | sensAIfood / P. Berzaghi, Zenodo, [doi:10.5281/zenodo.15838272](https://doi.org/10.5281/zenodo.15838272) |
 | 21 | Rocha pear 2021, trimmed and SNV-transformed spectra, soluble solids | Adapted from task 15 under the same [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) authorization; [doi:10.1016/j.postharvbio.2021.111562](https://doi.org/10.1016/j.postharvbio.2021.111562) |
-| 22–25 | Mango harvest seasons S1–S4, dry matter | Anderson et al., Mendeley Data, [doi:10.17632/46htwnp833.5](https://doi.org/10.17632/46htwnp833.5) |
+| 22–25 | Mango harvest seasons S1–S4, dry matter | Anderson et al., Mendeley Data v2, [doi:10.17632/46htwnp833.5](https://doi.org/10.17632/46htwnp833.5) |
 | 30 | Wheat measured with a FOSS NIRSYSTEM-5000, protein | sensAIfood / CRA-W, Zenodo, [doi:10.5281/zenodo.16108496](https://doi.org/10.5281/zenodo.16108496) |
 
 ## Exact task directories

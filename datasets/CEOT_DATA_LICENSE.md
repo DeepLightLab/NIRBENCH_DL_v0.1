@@ -20,7 +20,7 @@ This license applies to the dataset CSV files and their associated metadata. It 
 
 Users should attribute the data as:
 
-> Dário Passos and CEOT–University of Algarve, CEOT pear spectroscopy datasets, distributed through NIRBENCH-DL v0.1, CC BY 4.0.
+> Rui Guerra, Dário Passos and CEOT–University of Algarve, CEOT pear spectroscopy datasets, distributed through NIRBENCH-DL v0.1, CC BY 4.0.
 
 Users should also cite the corresponding research publication:
 

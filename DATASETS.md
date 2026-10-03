@@ -2,7 +2,7 @@
 
 NIRBENCH-DL contains 30 regression task configurations derived from public research datasets and CEOT-UAlg measurements. The files are harmonized copies with fixed train/test partitions. Original splits were preserved when supplied; otherwise the curated data were split and frozen so every model receives identical rows.
 
-Each task uses `data_train.csv` and `data_test.csv`. For tasks 2, 4, 11, 12, and 14, these files must first be recreated from their original public sources with the supplied Python scripts.[^recreate-data] Spectral columns are identified from wavelength-like headers and the last remaining column is the target. Some source exports contain a leading serialized index or sample identifier and some do not; `src/data_loading.py` removes a leading `Unnamed` or non-wavelength identifier when present.
+Each task uses `data_train.csv` and `data_test.csv`. For tasks 4, 12, and 14, these files must first be recreated from their original public sources with the supplied Python scripts.[^recreate-data] Spectral columns are identified from wavelength-like headers and the last remaining column is the target. Some source exports contain a leading serialized index or sample identifier and some do not; `src/data_loading.py` removes a leading `Unnamed` or non-wavelength identifier when present.
 
 ## Sources
 
@@ -63,17 +63,16 @@ Each task uses `data_train.csv` and `data_test.csv`. For tasks 2, 4, 11, 12, and
 
 ## Integrity and reuse
 
-`datasets/manifest.csv` records the row count, loaded spectral width, target name, byte size, and SHA-256 digest of every stored partition. Run `python validate_setup.py` after cloning to verify the copy.
+`datasets/manifest.csv` records the row count, loaded spectral width, target name, byte size, and SHA-256 digest of every stored partition. Prepare the download-required tasks 4, 12, and 14, then run `python validate_setup.py` to verify the copy. Entries marked `included` describe distributed files; entries marked `download_required` describe the expected locally reconstructed exports.
 
-The repository's Apache License 2.0 applies to software and does not override dataset terms. See [DATA_LICENSES.md](DATA_LICENSES.md) for the license or permission basis, redistribution status, and recorded transformations for each task. Cite the original source for every dataset you use. The CEOT–UAlg datasets in tasks 15, 16, and 21 are released under CC BY 4.0; their rights statement is in `datasets/CEOT_DATA_LICENSE.md`. Other files remain subject to the licenses and attribution requirements published by their source repositories.
+The repository's Apache License 2.0 applies to software and does not override dataset terms. See [DATA_LICENSES.md](DATA_LICENSES.md) for the license or permission basis, redistribution status, and recorded transformations for each task. Cite the original source for every dataset you use. The CEOT–UAlg datasets in tasks 15, 16, and 21 are released under CC BY 4.0; their rights statement is in `datasets/CEOT_DATA_LICENSE.md`. Tasks 2 and 11 are included under written redistribution permission from Jean-Michel Roger / ChemHouse; see [CHEMHOUSE_PERMISSION.md](CHEMHOUSE_PERMISSION.md). No standard dataset license was specified for those tasks. Other files remain subject to the licenses, written permissions, and attribution requirements of their sources.
 
 [^recreate-data]: From the repository root, run the following commands after installing `requirements.txt`. Each script downloads its authoritative source, recreates the benchmark's fixed train/test partition, and writes the two CSV files in its task directory. An equivalent `data_split.ipynb` is retained beside each script for users who prefer Jupyter.
 
     ```bash
-    python datasets/1-Wheat_kernels_protein/data_split.py
-    python datasets/2-Wheat_flours_protein/data_split.py
     python datasets/4-CGL_NIR_grain_glucose/data_split.py
-    python datasets/11-Olive_oils_c16/data_split.py
     python datasets/12-NIR_DieselFuels_cn/data_split.py
     python datasets/14-NIR_Pharmaceutical_Tablets_assay/data_split.py
     ```
+
+The preparation scripts for the included tasks 1, 2, and 11 remain available as optional tools. They are not required for a complete checkout. Re-exporting CSV files can change byte hashes without changing the sample assignments or parsed numerical values; see `datasets/MANIFEST.md`.

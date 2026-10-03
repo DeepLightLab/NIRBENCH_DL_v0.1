@@ -17,6 +17,8 @@
 ├── src/data_loading.py      # shared fixed-split loader
 ├── datasets/                # 30 train/test task folders
 ├── DATASETS.md              # provenance, task mapping, and data terms
+├── DATA_LICENSES.md         # dataset licenses and permissions
+├── CHEMHOUSE_PERMISSION.md  # written permission for tasks 2 and 11
 ├── MODEL_REFERENCES.md      # architecture citations
 ├── requirements.txt
 └── environment.yml
@@ -91,7 +93,7 @@ See the [official TabPFN installation instructions](https://github.com/PriorLabs
 
 ## Validate the clean checkout
 
-First recreate the six source-download datasets by following the Python commands in the footnote in [DATASETS.md](DATASETS.md). Then run:
+First recreate the three source-download datasets (tasks 4, 12, and 14) by following the Python commands in the footnote in [DATASETS.md](DATASETS.md). Then run:
 
 ```bash
 python validate_setup.py
@@ -232,7 +234,7 @@ The current results show that TabPFN-3.5, a foundation model for tabular data, a
 
 ## Data, code, and model licenses
 
-The Apache License 2.0 covers the benchmark software authored for this repository. It does not relicense the included scientific datasets, TabPFN weights, or third-party packages. Dataset provenance and task mappings are in [DATASETS.md](DATASETS.md), and dataset licenses, permissions, redistribution status, and modifications are in [DATA_LICENSES.md](DATA_LICENSES.md). Architecture references are in [MODEL_REFERENCES.md](MODEL_REFERENCES.md). Users remain responsible for the terms attached to each original dataset and to the TabPFN-3.5 checkpoint.
+The Apache License 2.0 covers the benchmark software authored for this repository. It does not relicense the included scientific datasets, TabPFN weights, or third-party packages. Dataset provenance and task mappings are in [DATASETS.md](DATASETS.md), and dataset licenses, permissions, redistribution status, and modifications are in [DATA_LICENSES.md](DATA_LICENSES.md). Tasks 2 and 11 are included under written redistribution permission from Jean-Michel Roger / ChemHouse, recorded in [CHEMHOUSE_PERMISSION.md](CHEMHOUSE_PERMISSION.md); no standard dataset license was specified for them. Architecture references are in [MODEL_REFERENCES.md](MODEL_REFERENCES.md). Users remain responsible for the terms attached to each original dataset and to the TabPFN-3.5 checkpoint.
 
 ## Citation
 
